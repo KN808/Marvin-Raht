@@ -1,251 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LUX Creative Studio</title>
-  <link rel="stylesheet" href="style.css" />
-  
-  
-
-<style>
-  a[href*="instagram.com"]:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  }
-
-  h1 {
-    font-size: 100px;
-    margin: 0;
-    font-weight: bold;
-    letter-spacing: 24px;
-    color: white;
-    transition: color 3s ease;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      letter-spacing: 12px;
+  <title>Raht Consulting</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #1a1a1a;
     }
-  }
-    color: white;
-    transition: color 3s ease;
-  }
-
-  h1:hover {
-    color: #39ff14;
-  }
-
-  .zoom-on-hover {
-    display: inline-block;
-    transition: transform 0.3s ease;
-  }
-
-  .zoom-on-hover:hover {
-    transform: scale(1.1);
-  }
-
-  .hover-eyes {
-    color: white;
-    transition: color 3s ease;
-  }
-
-  .hover-eyes:hover {
-    color: black;
-  }
-
-  .gallery-item {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid transparent;
-    cursor: pointer;
-  }
-
-  .gallery-item:hover {
-    transform: scale(1.05);
-  }
-
-  
-
-  
-
-  .filter-btn {
-    background: white;
-    color: black;
-    padding: 10px 20px;
-    border-radius: 30px;
-    border: none;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: inline-block;
-  }
-
-  .filter-btn:hover, .filter-btn:focus {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    outline: none;
-  }
-
-  @keyframes blinkRed {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-
-  @keyframes blinkGreen {
-    0% { opacity: 1; }
-    25% { opacity: 0; }
-    50% { opacity: 1; }
-    75% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  @media (max-width: 768px) {
-    .gallery {
-      grid-template-columns: repeat(3, 1fr) !important;
+    header {
+      background-color: #f5f5f5;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-  }
-</style>
+    .logo {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    .hero {
+      background: url('https://www.otto-wulff.de/assets/images/hero-image.jpg') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+    .hero h1 {
+      font-size: 64px;
+      max-width: 800px;
+    }
+    section {
+      padding: 80px 40px;
+    }
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+  </style>
 </head>
-<body style="background-color: black; color: white; font-family: 'Helvetica Neue', sans-serif;">
-  <header style="text-align: center; padding: 80px 20px; position: relative;">
-    <h1 class="zoom-on-hover">LUX</h1>
-    <p style="font-size: 24px; margin-top: 10px; font-style: italic;">
-      <span class="zoom-on-hover">GOOSEBUMPS</span>
-      <span class="zoom-on-hover">FOR</span>
-      <span class="zoom-on-hover">YOUR</span>
-      <span class="zoom-on-hover hover-eyes">EYES</span>
-    </p>
-    <a href="https://www.instagram.com/scharnofski" target="_blank" style="position: absolute; top: 20px; right: 30px; background: white; color: black; padding: 10px 20px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 14px;">Contact</a>
+<body>
+  <header>
+    <div class="logo">Raht Consulting</div>
+    <nav>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#projekte">Projekte</a>
+      <a href="#unternehmen">Unternehmen</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
   </header>
 
+  <div class="hero">
+    <h1>Wir gestalten die Zukunft von Bau & Beratung</h1>
+  </div>
 
-<div class="filters" style="text-align: center; margin: 40px auto 30px;">
-  <button class="filter-btn" data-filter="all">All</button>
-  <button class="filter-btn" data-filter="minimalistic">Minimalistic</button>
-  <button class="filter-btn" data-filter="photography">Photography</button>
-  <button class="filter-btn" data-filter="cartoon">Cartoon</button>
-</div>
+  <section id="leistungen">
+    <h2 class="section-title">Unsere Leistungen</h2>
+    <div class="grid">
+      <div>
+        <h3>Projektentwicklung</h3>
+        <p>Von der Idee bis zur Umsetzung – wir begleiten jedes Vorhaben mit Weitblick und Effizienz.</p>
+      </div>
+      <div>
+        <h3>Beratung & Strategie</h3>
+        <p>Wir analysieren, planen und entwickeln maßgeschneiderte Lösungen für nachhaltigen Erfolg.</p>
+      </div>
+      <div>
+        <h3>Digitale Lösungen</h3>
+        <p>Innovative Technologien für moderne Bauprozesse und optimierte Arbeitsabläufe.</p>
+      </div>
+    </div>
+  </section>
 
-<section class="gallery" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1vw; justify-items: center; align-items: start; padding: 1vw; margin: 0 auto; max-width: 1440px;">
-    <img src="images/chips2.png" class="gallery-item photography" alt="Funny photography-style chips illustration" style="box-shadow: 0 0 20px rgba(255,255,255,0.2); border-radius: 12px; max-width: 300px; width: 100%; height: auto; transition: transform 0.3s ease; cursor: pointer;" />
-    <img src="images/chips3.png" class="gallery-item cartoon" alt="Black & white cartoon chips drawing" style="box-shadow: 0 0 20px rgba(255,255,255,0.2); border-radius: 12px; max-width: 300px; width: 100%; height: auto;" />
-    <img src="images/chips4.png" class="gallery-item cartoon" alt="Cartoon style chips artwork 4" style="box-shadow: 0 0 20px rgba(255,255,255,0.2); border-radius: 12px; max-width: 300px; width: 100%; height: auto; transition: transform 0.3s ease; cursor: pointer;" />
-    <img src="images/83kpokemon1.png" class="gallery-item cartoon" alt="Cartoon-inspired Pokémon artwork" style="box-shadow: 0 0 20px rgba(255,255,255,0.2); border-radius: 12px; max-width: 300px; width: 100%; height: auto;" />
-    <img src="images/braille1.png" class="gallery-item minimalistic" alt="Minimalistic braille concept art" style="box-shadow: 0 0 20px rgba(255,255,255,0.2); border-radius: 12px; max-width: 300px; width: 100%; height: auto;" />   
-    <img src="images/83kpills2.png" class="gallery-item eye-catcher photography" alt="Black & white photo of pills" style="box-shadow: 0 0 20px rgba(255,255,255,0.2); border-radius: 12px; max-width: 300px; width: 100%; height: auto;" />
-    <img src="images/83kpills1.png" class="gallery-item photography" alt="Pills photo art" style="box-shadow: 0 0 20px rgba(255,255,255,0.2); border-radius: 12px; max-width: 300px; width: 100%; height: auto;" />
-    <img src="images/83kdrip1.png" class="gallery-item photography minimalistic" alt="Liquid drip effect art" style="box-shadow: 0 0 20px rgba(255,255,255,0.2); border-radius: 12px; max-width: 300px; width: 100%; height: auto;" />
-    <img src="images/83kvape2.png" class="gallery-item photography minimalistic" alt="Photography of vape product" style="box-shadow: 0 0 20px rgba(255,255,255,0.2); border-radius: 12px; max-width: 300px; width: 100%; height: auto;" />
-  
-</section>
-<div style="height: 1vw; background-color: black;"></div>
+  <section id="projekte">
+    <h2 class="section-title">Aktuelle Projekte</h2>
+    <div class="grid">
+      <div>
+        <img src="https://via.placeholder.com/400x250" alt="Projekt 1" style="width:100%; height:auto;" />
+        <p>Wohnquartier Berlin – 120 neue Wohneinheiten mit nachhaltiger Bauweise.</p>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/400x250" alt="Projekt 2" style="width:100%; height:auto;" />
+        <p>Bürokomplex Hamburg – Smart Office mit Energieeffizienz auf höchstem Niveau.</p>
+      </div>
+    </div>
+  </section>
 
-<!-- Lightbox Container -->
-<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999; transition:opacity 0.3s ease;">
-  <span id="lightbox-close" style="position:absolute; top:30px; right:40px; font-size:2rem; color:white; cursor:pointer;">&times;</span>
-  <span id="left-arrow" style="position:absolute; left:20px; top:50%; transform:translateY(-50%); font-size:2rem; color:white; cursor:pointer;">&#10094;</span>
-  <img id="lightbox-img" src="" alt="Enlarged view" style="width: 90vmin; height: 90vmin; object-fit: cover; box-shadow: 0 0 40px rgba(255,255,255,0.2); border-radius: 8px; transform: scale(0.9); opacity: 0; transition: transform 0.4s ease, opacity 0.4s ease;" />
-  <span id="right-arrow" style="position:absolute; right:20px; top:50%; transform:translateY(-50%); font-size:2rem; color:white; cursor:pointer;">&#10095;</span>
-</div>
+  <section id="unternehmen">
+    <h2 class="section-title">Über uns</h2>
+    <p>Raht Consulting ist ein modernes Beratungsunternehmen mit Fokus auf Bauwirtschaft, Innovation und nachhaltige Stadtentwicklung.</p>
+  </section>
 
+  <section id="kontakt">
+    <h2 class="section-title">Kontakt</h2>
+    <p>Sie haben Fragen oder ein konkretes Projektvorhaben? Schreiben Sie uns!</p>
+    <p>E-Mail: kontakt@raht-consulting.de</p>
+    <p>Telefon: +49 (0)40 123456</p>
+  </section>
 
-  
-  <script>
-// Filter toggle behavior
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.getAttribute('data-filter');
-      const images = document.querySelectorAll('.gallery-item');
-      const isActive = btn.classList.contains('active');
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-
-      if (!isActive) {
-        btn.classList.add('active');
-        images.forEach(img => {
-          if (filter === 'all' || img.classList.contains(filter)) {
-            img.style.display = 'inline-block';
-          } else {
-            img.style.display = 'none';
-          }
-        });
-      } else {
-        images.forEach(img => img.style.display = 'inline-block');
-      }
-    });
-  });
-
-// Lightbox setup
-const galleryImages = document.querySelectorAll('.gallery-item');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const lightboxClose = document.getElementById('lightbox-close');
-const leftArrow = document.getElementById('left-arrow');
-const rightArrow = document.getElementById('right-arrow');
-let currentIndex = -1;
-
-function getVisibleImages() {
-  return Array.from(document.querySelectorAll('.gallery-item')).filter(i => i.style.display !== 'none');
-}
-
-function updateLightbox(index) {
-  const visibleImgs = getVisibleImages();
-  currentIndex = (index + visibleImgs.length) % visibleImgs.length;
-  lightboxImg.src = visibleImgs[currentIndex].src;
-  requestAnimationFrame(() => {
-    lightboxImg.style.transform = 'scale(1)';
-    lightboxImg.style.opacity = '1';
-  });
-}
-
-galleryImages.forEach((img) => {
-  img.addEventListener('click', () => {
-    const visibleImgs = getVisibleImages();
-    const trueIndex = visibleImgs.findIndex(i => i === img);
-    updateLightbox(trueIndex);
-    lightbox.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-function closeLightbox() {
-  lightboxImg.style.transform = 'scale(0.9)';
-  lightboxImg.style.opacity = '0';
-  setTimeout(() => {
-    lightbox.style.display = 'none';
-    lightboxImg.src = '';
-    document.body.style.overflow = '';
-  }, 300);
-}
-
-lightboxClose.addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) closeLightbox();
-});
-leftArrow.addEventListener('click', () => updateLightbox(currentIndex - 1));
-rightArrow.addEventListener('click', () => updateLightbox(currentIndex + 1));
-document.addEventListener('keydown', (e) => {
-  if (lightbox.style.display === 'flex') {
-    if (e.key === 'ArrowRight') updateLightbox(currentIndex + 1);
-    if (e.key === 'ArrowLeft') updateLightbox(currentIndex - 1);
-    if (e.key === 'Escape') closeLightbox();
-  }
-});
-
-// Touch swipe
-let touchStartX = 0;
-let touchEndX = 0;
-lightbox.addEventListener('touchstart', (e) => {
-  touchStartX = e.changedTouches[0].screenX;
-});
-lightbox.addEventListener('touchend', (e) => {
-  touchEndX = e.changedTouches[0].screenX;
-  if (touchEndX < touchStartX - 50) updateLightbox(currentIndex + 1);
-  if (touchEndX > touchStartX + 50) updateLightbox(currentIndex - 1);
-});
-
-
-</script>
+  <footer>
+    <p>&copy; 2025 Raht Consulting. Alle Rechte vorbehalten.</p>
+  </footer>
 </body>
 </html>
