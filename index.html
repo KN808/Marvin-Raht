@@ -110,7 +110,27 @@
     #scrollTopBtn:hover {
       background-color: #555;
     }
-  </style>
+      #scrollDownBtn {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #scrollDownBtn:hover {
+      background-color: #555;
+    }
+
 </head>
 <body>
   <header>
@@ -123,9 +143,9 @@
     </nav>
   </header>
 
-  <div class="hero" style="background: url('images/logosquare1.png') center center no-repeat; background-size: 50%; background-attachment: fixed; height: 90vh;"></div>
-
-  <section id="leistungen">
+  <div class="hero" style="background: url('images/logosquare1.png') center center no-repeat; background-size: 50%; background-attachment: fixed; height: 90vh; position: relative;"><button id="scrollDownBtn" onclick="scrollToSection('leistungen')">↓</button>
+</div>
+<section id="leistungen">
     <h2 class="section-title">Unsere Leistungen</h2>
     <div class="grid">
       <div>
@@ -206,6 +226,14 @@
 
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function scrollToSection(id) {
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
   }
 </script>
 </body>
