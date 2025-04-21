@@ -38,6 +38,7 @@
       background-attachment: fixed;
       animation: zoomHero 3s ease-out;
       background: url('images/logosquare1.png') center/contain no-repeat;
+      background-size: 80%;
       height: 90vh;
       display: flex;
       justify-content: center;
@@ -159,7 +160,6 @@
     const header = document.querySelector('header');
     if (window.scrollY > 50) {
       header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-      header.style.backgroundColor = '#ffffff';
     } else {
       header.style.boxShadow = 'none';
       header.style.backgroundColor = '#f5f5f5';
