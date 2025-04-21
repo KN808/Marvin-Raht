@@ -8,7 +8,7 @@
     body {
       padding-top: 100px;
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
       background-color: #fff;
       color: #1a1a1a;
     }
@@ -103,6 +103,7 @@
   position: absolute;
   bottom: 30px;
   left: 50%;
+  transform: translateX(-50%);
   background-color: #333;
   color: white;
   border: none;
@@ -115,7 +116,6 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease;
-  transform: translate(-50%, 0);
   transform-origin: center;
 }
     #scrollDownBtn:hover {
@@ -126,8 +126,7 @@
 </head>
 <body>
   <header>
-    <div class="logo"><img src="images/logoround1.png" alt="Raht Consulting Logo" style="height: 50px;" /></div>
-    <nav>
+        <nav>
       <a href="#leistungen">Leistungen</a>
       <a href="#projekte">Projekte</a>
       <a href="#unternehmen">Unternehmen</a>
