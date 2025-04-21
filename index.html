@@ -116,7 +116,7 @@
   <section id="kontakt">
     <h2 class="section-title">Kontakt</h2>
     <p>Sie haben Fragen oder ein konkretes Projektvorhaben? Schreiben Sie uns!</p>
-    <p>E-Mail: kontakt@raht-consulting.de</p>
+    <p>E-Mail: kontakt@raht-consulting.com</p>
     <p>Telefon: +49 (0)40 123456</p>
   </section>
 
@@ -149,6 +149,56 @@
       header.style.backgroundColor = '#f5f5f5';
     }
   });
+</script>
+<div id="crane-animation" style="position: fixed; top: 0; left: 50%; transform: translateX(-50%); z-index: 10000; pointer-events: none;">
+  <svg width="40" height="1000" xmlns="http://www.w3.org/2000/svg">
+    <line id="crane-line" x1="20" y1="0" x2="20" y2="200" stroke="#555" stroke-width="4" stroke-dasharray="8,4" />
+    <rect id="crane-hook" x="10" y="200" width="20" height="20" fill="#999" />
+  </svg>
+</div>
+
+<script>
+// Glattes Scrollen beim Klick auf Navigation
+  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+// Sticky Header beim Scrollen
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+      header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+      header.style.backgroundColor = '#ffffff';
+    } else {
+      header.style.boxShadow = 'none';
+      header.style.backgroundColor = '#f5f5f5';
+    }
+  });
+
+// Kran-Scroll-Animation
+  const craneLine = document.getElementById('crane-line');
+  const craneHook = document.getElementById('crane-hook');
+
+  function updateCranePosition() {
+    const scrollTop = window.scrollY;
+    const maxHeight = 800; // Maximale Seillänge
+    const offset = Math.min(scrollTop, maxHeight);
+
+    craneLine.setAttribute('y2', 200 + offset);
+    craneHook.setAttribute('y', 200 + offset);
+  }
+
+  window.addEventListener('scroll', updateCranePosition);
+  window.addEventListener('load', updateCranePosition);
 </script>
 </body>
 </html>
