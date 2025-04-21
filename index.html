@@ -59,26 +59,11 @@
       padding: 40px;
       text-align: center;
     }
-      .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-      .alternating-section:nth-of-type(even) {
-      background-color: #f8f8f8;
-    }
-    .alternating-section:nth-of-type(odd) {
-      background-color: #ffffff;
-    }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo"><img src="images/logoround1.png" alt="Raht Consulting Logo" style="height: 50px;" onerror="this.outerHTML='Raht Consulting';" /></div>
+    <div class="logo">Raht Consulting</div>
     <nav>
       <a href="#leistungen">Leistungen</a>
       <a href="#projekte">Projekte</a>
@@ -88,13 +73,10 @@
   </header>
 
   <div class="hero">
-  <h1>Wir gestalten die Zukunft von Bau & Beratung</h1>
-</div>
-<div style="width: 100%; margin-top: -40px;">
-  <img src="https://via.placeholder.com/1440x400" alt="Placeholder nach Hero" style="width: 100%; height: auto; display: block;" />
-</div>
+    <h1>Wir gestalten die Zukunft von Bau & Beratung</h1>
+  </div>
 
-  <section class="fade-in alternating-section">
+  <section id="leistungen">
     <h2 class="section-title">Unsere Leistungen</h2>
     <div class="grid">
       <div>
@@ -112,7 +94,7 @@
     </div>
   </section>
 
-  <section class="fade-in alternating-section">
+  <section id="projekte">
     <h2 class="section-title">Aktuelle Projekte</h2>
     <div class="grid">
       <div>
@@ -126,12 +108,12 @@
     </div>
   </section>
 
-  <section class="fade-in alternating-section">
+  <section id="unternehmen">
     <h2 class="section-title">Über uns</h2>
     <p>Raht Consulting ist ein modernes Beratungsunternehmen mit Fokus auf Bauwirtschaft, Innovation und nachhaltige Stadtentwicklung.</p>
   </section>
 
-  <section class="fade-in alternating-section">
+  <section id="kontakt">
     <h2 class="section-title">Kontakt</h2>
     <p>Sie haben Fragen oder ein konkretes Projektvorhaben? Schreiben Sie uns!</p>
     <p>E-Mail: kontakt@raht-consulting.com</p>
@@ -167,47 +149,6 @@
       header.style.backgroundColor = '#f5f5f5';
     }
   });
-
-// Glattes Scrollen beim Klick auf Navigation
-  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
-
-// Sticky Header beim Scrollen
-  window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-      header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-      header.style.backgroundColor = '#ffffff';
-    } else {
-      header.style.boxShadow = 'none';
-      header.style.backgroundColor = '#f5f5f5';
-    }
-  });
-
-
-  window.addEventListener('load', updateCranePosition);
-
-  // Scroll-Fade-In Effekte
-  const fadeEls = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  fadeEls.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
