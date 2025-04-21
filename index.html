@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raht Consulting</title>
   <style>
+    @keyframes zoomIn {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -29,7 +39,7 @@
       font-weight: 500;
     }
     .hero {
-      background: url('images/logoround1.png') center/contain no-repeat;
+      background: none;
       height: 90vh;
       display: flex;
       justify-content: center;
@@ -73,7 +83,9 @@
   </header>
 
   <div class="hero">
-    <h1>Wir gestalten die Zukunft von Bau & Beratung</h1>
+    <div style="text-align: center;">
+      <img src="images/logoround1.png" alt="Raht Consulting Logo" style="height: 150px; margin-bottom: 20px; animation: zoomIn 1s ease-out;" />
+    </div>
   </div>
 
   <section id="leistungen">
