@@ -63,7 +63,7 @@
 </head>
 <body>
   <header>
-    
+    <div class="logo"><img src="images/logoround1.png" alt="Raht Consulting Logo" style="height: 50px;" /></div>
     <nav>
       <a href="#leistungen">Leistungen</a>
       <a href="#projekte">Projekte</a>
@@ -73,9 +73,7 @@
   </header>
 
   <div class="hero">
-    <div style="text-align: center;">
-      <img id="logo-draw" src="images/logoround1.png" alt="Raht Consulting Logo" style="height: 100px; margin-bottom: 20px; filter: invert(1); clip-path: inset(0 100% 0 0); transition: clip-path 3s ease-out;" />
-      <h1>Wir gestalten die Zukunft von Bau & Beratung</h1>
+    <h1>Wir gestalten die Zukunft von Bau & Beratung</h1>
   </div>
 
   <section id="leistungen">
@@ -100,11 +98,11 @@
     <h2 class="section-title">Aktuelle Projekte</h2>
     <div class="grid">
       <div>
-        <img src="images/craneman1.png" alt="Projekt 1" style="width:100%; height:auto;" />
+        <img src="https://via.placeholder.com/400x250" alt="Projekt 1" style="width:100%; height:auto;" />
         <p>Wohnquartier Berlin – 120 neue Wohneinheiten mit nachhaltiger Bauweise.</p>
       </div>
       <div>
-        <img src="images/crane1.png" alt="Projekt 2" style="width:100%; height:auto;" />
+        <img src="https://via.placeholder.com/400x250" alt="Projekt 2" style="width:100%; height:auto;" />
         <p>Bürokomplex Hamburg – Smart Office mit Energieeffizienz auf höchstem Niveau.</p>
       </div>
     </div>
@@ -149,17 +147,6 @@
     } else {
       header.style.boxShadow = 'none';
       header.style.backgroundColor = '#f5f5f5';
-    }
-  });
-// Logo-Zeichnungsanimation beim Laden
-  window.addEventListener('load', () => {
-    const logo = document.getElementById('logo-draw');
-    if (logo) {
-      setTimeout(() => {
-        logo.style.clipPath = 'inset(0 0 0 0)';
-      }, 100);
-    }
-  });
     }
   });
 </script>
