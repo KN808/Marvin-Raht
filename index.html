@@ -35,9 +35,15 @@
       font-weight: 500;
     }
     .hero {
-      background-attachment: fixed;
-      animation: zoomHero 3s ease-out;
-      background: url('images/logosquare1.png') center/contain no-repeat;
+  background-attachment: fixed;
+  animation: zoomHero 3s ease-out;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
       background-size: 80%;
       height: 90vh;
       display: flex;
@@ -101,8 +107,8 @@
     </nav>
   </header>
 
-  <div class="hero">
-    <img src="images/logosquare1.png" alt="Hero Logo" style="max-height: 60vh; width: auto; animation: zoomHeroImg 3s ease-out;" />
+  <div class="hero" style="background: none;">
+  <img src="images/logosquare1.png" alt="Hero Logo" style="max-height: 60vh; width: auto; animation: zoomHeroImg 3s ease-out;" />
 </div>
 
   <section id="leistungen">
