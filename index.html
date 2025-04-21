@@ -68,11 +68,17 @@
       opacity: 1;
       transform: translateY(0);
     }
+      .alternating-section:nth-of-type(even) {
+      background-color: #f8f8f8;
+    }
+    .alternating-section:nth-of-type(odd) {
+      background-color: #ffffff;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo"><img src="images/logoround1.png" alt="Raht Consulting Logo" style="height: 50px;" /></div>
+    <div class="logo"><img src="images/logoround1.png" alt="Raht Consulting Logo" style="height: 50px;" onerror="this.outerHTML='Raht Consulting';" /></div>
     <nav>
       <a href="#leistungen">Leistungen</a>
       <a href="#projekte">Projekte</a>
@@ -88,7 +94,7 @@
   <img src="https://via.placeholder.com/1440x400" alt="Placeholder nach Hero" style="width: 100%; height: auto; display: block;" />
 </div>
 
-  <section$1 class="fade-in">
+  <section class="fade-in alternating-section">
     <h2 class="section-title">Unsere Leistungen</h2>
     <div class="grid">
       <div>
@@ -106,7 +112,7 @@
     </div>
   </section>
 
-  <section$1 class="fade-in">
+  <section class="fade-in alternating-section">
     <h2 class="section-title">Aktuelle Projekte</h2>
     <div class="grid">
       <div>
@@ -120,12 +126,12 @@
     </div>
   </section>
 
-  <section$1 class="fade-in">
+  <section class="fade-in alternating-section">
     <h2 class="section-title">Über uns</h2>
     <p>Raht Consulting ist ein modernes Beratungsunternehmen mit Fokus auf Bauwirtschaft, Innovation und nachhaltige Stadtentwicklung.</p>
   </section>
 
-  <section$1 class="fade-in">
+  <section class="fade-in alternating-section">
     <h2 class="section-title">Kontakt</h2>
     <p>Sie haben Fragen oder ein konkretes Projektvorhaben? Schreiben Sie uns!</p>
     <p>E-Mail: kontakt@raht-consulting.com</p>
