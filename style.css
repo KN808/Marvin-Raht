@@ -1,0 +1,23 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+section {
+  scroll-margin-top: 100px;
+}
+.filter-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: #000000;
+  color: white;
+}
