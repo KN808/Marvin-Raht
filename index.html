@@ -59,6 +59,15 @@
       padding: 40px;
       text-align: center;
     }
+      .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
@@ -79,7 +88,7 @@
   <img src="https://via.placeholder.com/1440x400" alt="Placeholder nach Hero" style="width: 100%; height: auto; display: block;" />
 </div>
 
-  <section id="leistungen">
+  <section$1 class="fade-in">
     <h2 class="section-title">Unsere Leistungen</h2>
     <div class="grid">
       <div>
@@ -97,7 +106,7 @@
     </div>
   </section>
 
-  <section id="projekte">
+  <section$1 class="fade-in">
     <h2 class="section-title">Aktuelle Projekte</h2>
     <div class="grid">
       <div>
@@ -111,12 +120,12 @@
     </div>
   </section>
 
-  <section id="unternehmen">
+  <section$1 class="fade-in">
     <h2 class="section-title">Über uns</h2>
     <p>Raht Consulting ist ein modernes Beratungsunternehmen mit Fokus auf Bauwirtschaft, Innovation und nachhaltige Stadtentwicklung.</p>
   </section>
 
-  <section id="kontakt">
+  <section$1 class="fade-in">
     <h2 class="section-title">Kontakt</h2>
     <p>Sie haben Fragen oder ein konkretes Projektvorhaben? Schreiben Sie uns!</p>
     <p>E-Mail: kontakt@raht-consulting.com</p>
@@ -152,15 +161,7 @@
       header.style.backgroundColor = '#f5f5f5';
     }
   });
-</script>
-<div id="crane-animation" style="position: fixed; top: 0; left: 50%; transform: translateX(-50%); z-index: 10000; pointer-events: none;">
-  <svg width="40" height="1000" xmlns="http://www.w3.org/2000/svg">
-    <line id="crane-line" x1="20" y1="0" x2="20" y2="200" stroke="#555" stroke-width="4" stroke-dasharray="8,4" />
-    <rect id="crane-hook" x="10" y="200" width="20" height="20" fill="#999" />
-  </svg>
-</div>
 
-<script>
 // Glattes Scrollen beim Klick auf Navigation
   document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -187,21 +188,20 @@
     }
   });
 
-// Kran-Scroll-Animation
-  const craneLine = document.getElementById('crane-line');
-  const craneHook = document.getElementById('crane-hook');
 
-  function updateCranePosition() {
-    const scrollTop = window.scrollY;
-    const maxHeight = 800; // Maximale Seillänge
-    const offset = Math.min(scrollTop, maxHeight);
-
-    craneLine.setAttribute('y2', 200 + offset);
-    craneHook.setAttribute('y', 200 + offset);
-  }
-
-  window.addEventListener('scroll', updateCranePosition);
   window.addEventListener('load', updateCranePosition);
+
+  // Scroll-Fade-In Effekte
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  fadeEls.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
