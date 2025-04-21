@@ -123,7 +123,12 @@
   </header>
 
   <div class="hero" style="background: url('images/logosquare1.png') center center no-repeat; background-size: 50%; background-attachment: fixed; height: 90vh; position: relative;">
-  <button onclick="scrollToSection('leistungen')" title="Scrolle zu Leistungen" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #333; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center;">↓</button>
+  <button onclick="scrollToSection('leistungen')" title="Scrolle zu Leistungen" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #333; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">↓</button>
+  <style>
+    .hero button:hover {
+      transform: translateX(-50%) scale(1.2);
+    }
+  </style>
 </div>
 <section id="leistungen">
   <h2 class="section-title">Unsere Leistungen</h2>
