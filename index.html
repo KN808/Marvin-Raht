@@ -156,9 +156,9 @@
 </head>
 <body>
   <header style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 20px 40px; position: fixed; top: 0; left: 0; z-index: 1000; background-color: #ffffff;">
-  <div class="logo" style="margin-right: auto;"><img src="images/logoround1.png" alt="Raht Logo" style="height: 40px;" /></div>
+  <div class="logo" style="flex-shrink: 0;"><img src="images/logoround1.png" alt="Raht Logo" style="height: 40px;" /></div>
   <button class="menu-toggle" onclick="toggleMenu()"></button>
-  <nav class="desktop-nav" style="display: flex; justify-content: flex-end; align-items: center; gap: 20px;">
+  <nav class="desktop-nav" style="flex-grow: 1; display: flex; justify-content: flex-end; align-items: center; gap: 20px; white-space: nowrap; min-width: 0; max-width: 100%; overflow: visible;">
       <a href="#leistungen">Leistungen</a>
       <a href="#projekte">Projekte</a>
       <a href="#unternehmen">Unternehmen</a>
