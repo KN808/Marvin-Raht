@@ -103,7 +103,6 @@
   position: absolute;
   bottom: 30px;
   left: 50%;
-  transform: translateX(-50%);
   background-color: #333;
   color: white;
   border: none;
@@ -116,7 +115,8 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease;
-  transform-origin: center center;
+  transform: translate(-50%, 0);
+  transform-origin: center;
 }
     #scrollDownBtn:hover {
   background-color: #555;
