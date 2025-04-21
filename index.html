@@ -78,7 +78,17 @@
         opacity: 1;
       }
     }
-  </style>
+  @keyframes zoomHeroImg {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+</style>
 </head>
 <body>
   <header>
@@ -91,7 +101,9 @@
     </nav>
   </header>
 
-  <div class="hero"></div>
+  <div class="hero">
+    <img src="images/logosquare1.png" alt="Hero Logo" style="max-height: 60vh; width: auto; animation: zoomHeroImg 3s ease-out;" />
+</div>
 
   <section id="leistungen">
     <h2 class="section-title">Unsere Leistungen</h2>
