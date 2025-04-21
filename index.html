@@ -54,6 +54,7 @@
       color: #333;
       font-weight: 500;
       white-space: nowrap;
+      flex-shrink: 0;
     }
     .hero {
       background-color: #ffffff;
@@ -143,7 +144,10 @@
   </style>
 </head>
 <body>
-  <header><div class="logo"><img src="images/logoround1.png" alt="Raht Logo" style="height: 40px;" /></div><button class="menu-toggle" onclick="toggleMenu()"></button><nav style="flex-grow: 1; display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 20px; width: auto; overflow: visible; flex-shrink: 0;">
+  <header>
+  <div class="logo"><img src="images/logoround1.png" alt="Raht Logo" style="height: 40px;" /></div>
+  <button class="menu-toggle" onclick="toggleMenu()"></button>
+  <nav style="flex-grow: 1; display: flex; justify-content: flex-end; align-items: center; gap: 20px; width: 100%; white-space: nowrap; overflow: visible;">
       <a href="#leistungen">Leistungen</a>
       <a href="#projekte">Projekte</a>
       <a href="#unternehmen">Unternehmen</a>
