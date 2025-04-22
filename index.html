@@ -264,7 +264,7 @@
   <footer>
     <p>&copy; 2025 Raht Consulting. Alle Rechte vorbehalten.</p>
   </footer>
-  <button id="scrollTopBtn" onclick="scrollToSection('leistungen')">↑</button>
+  <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
 <script>
   // Glattes Scrollen beim Klick auf Navigation
   document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
@@ -293,11 +293,6 @@
       scrollBtn.style.opacity = '0';
       setTimeout(() => { scrollBtn.style.display = 'none'; }, 500);
     }
-  } else {
-    scrollBtn.style.opacity = '0';
-    setTimeout(() => { scrollBtn.style.display = 'none'; }, 500);
-  }
-    }
   });
 
   function scrollToSection(id) {
@@ -308,7 +303,8 @@
   }
 
   function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
   });
     }
   }
