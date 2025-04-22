@@ -134,7 +134,11 @@
 }
       50% { background-color: orange; }
     }
-  </style>
+  @keyframes rotateBox {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(720deg); }
+}
+</style>
 </head>
 <body>
   <header>
@@ -328,18 +332,26 @@
 <div id="fallingBox"></div>
   <style>
     #fallingBox {
+      animation: bounceToButton 3s ease-in-out forwards, rotateBox 0.6s ease-in-out;
       position: absolute;
-      top: -40px;
-      left: 50%;
-      transform: translateX(-50%);
+      top: -60px;
+      left: 0;
+      transform: none;
       width: 30px;
       height: 30px;
       background-color: red;
       z-index: 998;
       border-radius: 4px;
+      animation: bounceToButton 3s ease-in-out forwards;
     }
-    @keyframes fallToButton {
-      0% { top: -40px; }
+    @keyframes bounceToButton {
+      0% { top: -60px; left: 0; }
+      25% { top: 40px; left: 10%; }
+      40% { top: 20px; left: 30%; }
+      60% { top: 60px; left: 45%; }
+      80% { top: 100px; left: 48%; }
+      100% { top: calc(100% - 70px); left: 50%; }
+    }
       100% { top: calc(100% - 70px); }
     }
   </style>
