@@ -84,6 +84,8 @@
   }
 }
     #scrollTopBtn {
+    opacity: 0;
+  transition: opacity 0.5s ease;
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -135,6 +137,10 @@
   @keyframes rotateBox {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(720deg); }
+}
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
 }
 </style>
 </head>
@@ -290,7 +296,9 @@
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
       scrollBtn.style.display = 'flex';
+      scrollBtn.style.opacity = '1';
     } else {
+      scrollBtn.style.opacity = '0';
       scrollBtn.style.display = 'none';
     }
   });
