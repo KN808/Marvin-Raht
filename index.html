@@ -109,15 +109,9 @@
   transform: scale(1.2);
 }
       
-      .image-shadow {
-      width: 85%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-      display: block;
-      margin-left: 0;
-      margin-right: 0;
-    }
+      $1
+  filter: grayscale(100%);
+}
       .full-width {
       width: 100% !important;
       margin-left: 0;
@@ -141,6 +135,13 @@
 @keyframes floatUp {
   0% { transform: translateY(0); }
   100% { transform: translateY(-10px); }
+}
+.image-shadow {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+.image-shadow:hover {
+  filter: grayscale(0%);
 }
 </style>
 </head>
@@ -304,10 +305,7 @@
 
   function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-  });
-    }
-  }
+}
 </script>
   
 
