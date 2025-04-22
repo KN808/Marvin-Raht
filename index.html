@@ -328,73 +328,36 @@
 <div id="fallingBox"></div>
   <style>
     #fallingBox {
-      
-      position: fixed;
-      top: 0;
-      left: 0;
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
       width: 30px;
       height: 30px;
       background-color: red;
-      z-index: 9999;
+      z-index: 998;
       border-radius: 4px;
-      transform: translateX(0);
-    
-      animation: flashBox 0.4s ease-in-out;
+    }
+    @keyframes fallToButton {
+      0% { top: -40px; }
+      100% { top: calc(100% - 70px); }
     }
   </style>
   <script>
-    let fallingX = 0;
-    let fallingY = 0;
-    let velocityX = 2;
-    let velocityY = 0;
-    let gravity = 0.5;
-    const box = document.getElementById('fallingBox');
-
-    function animateFall() {
-      fallingY += velocityY;
-      velocityY += gravity;
-
-      fallingX += velocityX;
-      if (fallingX > window.innerWidth - 30 || fallingX < 0) {
-        velocityX = -velocityX * 0.9; // bounce and reduce speed
-        fallingX = Math.max(0, Math.min(window.innerWidth - 30, fallingX));
-      }
-
-      if (fallingY > window.innerHeight - 30) {
-        fallingY = window.innerHeight - 30;
-        velocityY = -velocityY * 0.8; // bounce effect
-      }
-
-      let boxRect = box.getBoundingClientRect();
-      let allImages = document.querySelectorAll('img.image-shadow');
-      for (let img of allImages) {
-        let rect = img.getBoundingClientRect();
-        if (
-          boxRect.bottom >= rect.top &&
-          boxRect.top <= rect.bottom &&
-          boxRect.right >= rect.left &&
-          boxRect.left <= rect.right
-        ) {
-          velocityY = -velocityY * 0.8; // bounce off image
-          fallingY = rect.top - 30; // position above image
-          break;
-        }
-      }
-      box.style.transform = `translate(${fallingX}px, ${fallingY}px)`;
-      requestAnimationFrame(animateFall);
-    }
-
-    window.addEventListener('scroll', () => {
-      const startZone = document.getElementById('leistungen');
-      const rect = startZone.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        fallingX = Math.random() * (window.innerWidth - 30);
-        fallingY = 0;
-        velocityY = 0;
+    const fallingBox = document.getElementById('fallingBox');
+    window.addEventListener('load', () => {
+      const heroSection = document.querySelector('.hero');
+      const scrollBtn = heroSection.querySelector('button');
+      if (fallingBox && scrollBtn) {
+        fallingBox.style.animation = 'fallToButton 1.4s ease-in-out forwards';
+        fallingBox.style.opacity = '1';
+        setTimeout(() => {
+          document.getElementById('clickSound').play();
+          scrollBtn.click();
+        }, 3000);
       }
     });
-
-    animateFall();
   </script>
+<audio id="clickSound" src="https://www.soundjay.com/button/sounds/button-16.mp3" preload="auto"></audio>
 </body>
 </html>
