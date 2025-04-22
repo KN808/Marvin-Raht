@@ -295,11 +295,12 @@
   const scrollBtn = document.getElementById('scrollTopBtn');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
-      scrollBtn.style.display = 'flex';
       scrollBtn.style.opacity = '1';
+      scrollBtn.style.display = 'flex';
+      scrollBtn.style.transition = 'opacity 0.5s ease';
     } else {
       scrollBtn.style.opacity = '0';
-      scrollBtn.style.display = 'none';
+      setTimeout(() => { scrollBtn.style.display = 'none'; }, 500);
     }
   });
 
