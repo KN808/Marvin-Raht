@@ -294,7 +294,10 @@
   // Scroll-to-Top Button sichtbar machen
   const scrollBtn = document.getElementById('scrollTopBtn');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
+    const strategieSection = document.querySelector("h3:contains('Beratung & Strategie')").closest("div[style*='display: flex']");
+    const strategieOffset = strategieSection.getBoundingClientRect().top + window.scrollY;
+
+    if (window.scrollY > strategieOffset - window.innerHeight / 2) {
       scrollBtn.style.opacity = '1';
       scrollBtn.style.display = 'flex';
       scrollBtn.style.transition = 'opacity 0.5s ease';
