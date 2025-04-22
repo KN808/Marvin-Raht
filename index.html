@@ -329,23 +329,27 @@
       fallBox.style.animation = 'dropIn 1.2s ease-in forwards';
     });
   </script>
-<div id="fallingBox"></div>
+<div id="fallingBox" class="hero-box"></div>
   <style>
-    #fallingBox {
-      animation: bounceToButton 3s ease-in-out forwards, rotateBox 0.6s ease-in-out;
-      position: absolute;
-      top: -60px;
-      left: 0;
-      transform: none;
-      width: 30px;
-      height: 30px;
-      background-color: red;
-      z-index: 998;
-      border-radius: 4px;
-      animation: bounceToButton 3s ease-in-out forwards;
-    }
+    #fallingBox.hero-box {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  z-index: 998;
+  border-radius: 4px;
+  animation: bounceToButton 3s ease-in-out forwards, rotateBox 1.2s ease-in-out;
+}
     @keyframes bounceToButton {
-      0% { top: -60px; left: 0; }
+  0% { top: -60px; left: 0; }
+  25% { top: 40px; left: 10%; }
+  40% { top: 20px; left: 30%; }
+  60% { top: 60px; left: 45%; }
+  80% { top: 100px; left: 48%; }
+  100% { top: calc(100% - 70px); left: 50%; }
+}
       25% { top: 40px; left: 10%; }
       40% { top: 20px; left: 30%; }
       60% { top: 60px; left: 45%; }
@@ -361,7 +365,7 @@
       const heroSection = document.querySelector('.hero');
       const scrollBtn = heroSection.querySelector('button');
       if (fallingBox && scrollBtn) {
-        fallingBox.style.animation = 'fallToButton 1.4s ease-in-out forwards';
+        fallingBox.style.animation = 'bounceToButton 3s ease-in-out forwards, rotateBox 1.2s ease-in-out';
         fallingBox.style.opacity = '1';
         setTimeout(() => {
           document.getElementById('clickSound').play();
