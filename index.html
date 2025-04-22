@@ -50,6 +50,7 @@
 }
     .hero h1 {
       font-size: 48px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
       max-width: 800px;
       font-weight: 700;
     }
@@ -132,15 +133,15 @@
 <body>
   <header>
         <nav>
-      <a href="#leistungen">Leistungen</a>
-      <a href="#projekte">Projekte</a>
-      <a href="#unternehmen">Unternehmen</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="#leistungen">🏗 Leistungen</a>
+      <a href="#projekte">📐 Projekte</a>
+      <a href="#unternehmen">🏢 Unternehmen</a>
+      <a href="#kontakt">✉ Kontakt</a>
     </nav>
   </header>
 
   <div class="hero" style="background: url('images/logosquare1.png') center center no-repeat; background-size: 35%; background-attachment: fixed; height: 90vh; position: relative;">
-  <button onclick="scrollToSection('leistungen')" title="Scrolle zu Leistungen" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #333; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">↓</button>
+  <button onclick="scrollToSection('leistungen')" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #333; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">↓</button>
   <style>
     @keyframes pulseArrow {
       0% { transform: translateX(-50%) scale(1); }
@@ -225,7 +226,7 @@
   <footer>
     <p>&copy; 2025 Raht Consulting. Alle Rechte vorbehalten.</p>
   </footer>
-  <button id="scrollTopBtn" onclick="scrollToSection('leistungen')" title="Zur Leistungs-Sektion">↑</button>
+  <button id="scrollTopBtn" onclick="scrollToSection('leistungen')">↑</button>
 <script>
   // Glattes Scrollen beim Klick auf Navigation
   document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
