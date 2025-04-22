@@ -137,16 +137,17 @@
   100% { transform: translateY(-10px); }
 }
 .image-shadow {
-  filter: grayscale(100%);
-  transition: filter 0.5s ease;
   width: 100%;
   height: auto;
   border-radius: 8px;
   display: block;
 }
-.image-shadow:hover {
-  filter: grayscale(0%);
-  border-radius: 8px;
+
+.zoom-on-hover {
+  transition: transform 0.3s ease;
+}
+.zoom-on-hover:hover {
+  transform: scale(1.05);
 }
 </style>
 </head>
@@ -163,7 +164,7 @@
   </header>
 
   <div class="hero" style="background: url('images/logosquare1.png') center center no-repeat; background-size: 35%; background-attachment: fixed; height: 90vh; position: relative;">
-  <button onclick="scrollToTop()" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #333; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">↓</button>
+  <button onclick="scrollToSection('leistungen')" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #333; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">↓</button>
   <style>
     @keyframes pulseArrow {
       0% { transform: translateX(-50%) scale(1); }
@@ -197,7 +198,7 @@
         <p>Von der ersten Idee bis zur Umsetzung – wir begleiten jedes Vorhaben mit Weitblick, technischer Präzision und einem tiefen Verständnis für architektonische und wirtschaftliche Anforderungen. Unser Fokus liegt auf Qualität und fundiertem Fachwissen in jeder Projektphase. Dabei berücksichtigen wir sowohl technische als auch rechtliche Rahmenbedingungen und unterstützen aktiv bei Genehmigungsverfahren, Standortanalysen und Projektsteuerung.</p>
       </div>
       <div style="flex: 1; min-width: 280px;">
-        <img src="images/cranerc1.png" alt="Projektentwicklung" class="image-shadow" />
+        <img src="images/cranerc1.png" alt="Projektentwicklung" class="image-shadow zoom-on-hover" />
       </div>
     </div>
 
