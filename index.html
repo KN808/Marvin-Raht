@@ -151,35 +151,75 @@
     animation: none;
     transform: translateX(-50%) scale(1.2);
   }
-</style>
+
+    .kontaktanfrage-button {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .kontaktanfrage-button:hover {
+      background-color: #333;
+    }
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.35);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+    .modal {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      animation: fadeIn 0.4s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .modal input, .modal textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .modal textarea {
+      resize: vertical;
+      height: 100px;
+    }
+    .submit-button {
+      background-color: #2d6a2d;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
 </head>
 <body>
   
-    <header>
-        <nav>
-      <a href="#leistungen">Leistungen</a>
-      <a href="#projekte">Projekte</a>
-      <a href="#unternehmen">Unternehmen</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
-  </header>
+    
+    <button class="kontaktanfrage-button" onclick="openModal()">Kontaktanfrage</button>
 
   <div class="hero" style="background: url('images/logosquare1.png') center center no-repeat; background-size: 35%; background-attachment: fixed; height: 90vh; position: relative;">
   <button onclick="scrollToSection('leistungen')" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #333; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">↓</button>
-  <style>
-    @keyframes pulseArrow {
-      0% { transform: translateX(-50%) scale(1); }
-      50% { transform: translateX(-50%) scale(1.2); }
-      100% { transform: translateX(-50%) scale(1); }
-    }
-    .hero button {
-      animation: pulseArrow 1s infinite;
-    }
-    .hero button:hover {
-      animation: none;
-      transform: translateX(-50%) scale(1.2);
-    }
-  </style>
 </div>
   
   <section id="leistungen">
@@ -267,7 +307,8 @@
   <div style="flex: 1; height: 1px; background-color: #ccc;"></div>
 </div>
     <p>Sie haben Fragen oder ein konkretes Projektvorhaben? Schreiben Sie uns!</p>
-    <p>E-Mail: kontakt@raht-consulting.com</p>
+    <button class="kontaktanfrage-button" onclick="openModal()">Kontaktanfrage</button>
+
     <p>Telefon: +49 157 73421824</p>
   </section>
 
@@ -318,5 +359,30 @@
 </script>
   
 
-</body>
+<div class="modal-overlay" id="kontaktModal" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <h2>Kontaktanfrage</h2>
+    <form method="POST" action="mailto:1scharnofski@gmail.com" enctype="text/plain">
+      <input type="text" name="Betreff" placeholder="Betreff" required />
+      <input type="text" name="Name" placeholder="Ihr Name" required />
+      <input type="tel" name="Telefon" placeholder="Telefon" required />
+      <input type="email" name="Email" placeholder="E-Mail Adresse" required />
+      <textarea name="Anfrage" placeholder="Ihre Anfrage" required></textarea>
+      <button type="submit" class="submit-button">Absenden</button>
+    </form>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById('kontaktModal').style.display = 'flex';
+}
+function closeModal(event) {
+  const modal = document.getElementById('kontaktModal');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+}
+</script>
+
 </html>
