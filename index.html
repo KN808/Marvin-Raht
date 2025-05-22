@@ -155,8 +155,7 @@
 </head>
 <body>
   
-  
-  <header>
+    <header>
         <nav>
       <a href="#leistungen">Leistungen</a>
       <a href="#projekte">Projekte</a>
@@ -165,6 +164,24 @@
     </nav>
   </header>
 
+  <div class="hero" style="background: url('images/logosquare1.png') center center no-repeat; background-size: 35%; background-attachment: fixed; height: 90vh; position: relative;">
+  <button onclick="scrollToSection('leistungen')" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #333; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">↓</button>
+  <style>
+    @keyframes pulseArrow {
+      0% { transform: translateX(-50%) scale(1); }
+      50% { transform: translateX(-50%) scale(1.2); }
+      100% { transform: translateX(-50%) scale(1); }
+    }
+    .hero button {
+      animation: pulseArrow 1s infinite;
+    }
+    .hero button:hover {
+      animation: none;
+      transform: translateX(-50%) scale(1.2);
+    }
+  </style>
+</div>
+  
   <section id="leistungen">
   <div style="display: flex; align-items: center; gap: 20px;">
     <h2 class="section-title" style="text-transform: uppercase; margin: 0; white-space: nowrap;">Unsere Leistungen</h2>
