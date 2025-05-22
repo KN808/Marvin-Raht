@@ -215,21 +215,22 @@
 </style>    
 </head>
 <header>
-  <div class="logo">Raht Consulting</div>
+  
   <nav>
     <a href="#leistungen">Leistungen</a>
     <a href="#projekte">Projekte</a>
     <a href="#unternehmen">Unternehmen</a>
     <a href="#kontakt">Kontakt</a>
+    
   </nav>
 </header>
-<div style="text-align: center; margin-top: 80px;">
+<div style="text-align: center; margin-top: 30px;">
   <button class="kontaktanfrage-button" onclick="openModal()">Kontaktanfrage</button>
 </div>
     <button class="kontaktanfrage-button" onclick="openModal()">Kontaktanfrage</button>
 
   <div class="hero" style="background: url('images/logosquare1.png') center center no-repeat; background-size: 35%; background-attachment: fixed; height: 90vh; position: relative;">
-  <button onclick="scrollToSection('leistungen')" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #333; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">↓</button>
+  <button onclick="scrollToSection('leistungen')" id="scrollDownBtn" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #333; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">↓</button>
 </div>
   
   <section id="leistungen">
@@ -311,20 +312,15 @@
 
 </section>
 
-<section id="kontakt">
-  <div style="display: flex; align-items: center; gap: 20px;">
-    <h2 class="section-title" style="text-transform: uppercase; margin: 0; white-space: nowrap;">Kontakt</h2>
-    <div style="flex: 1; height: 1px; background-color: #ccc;"></div>
-  </div>
-  <p>Sie haben Fragen oder ein konkretes Projektvorhaben? Schreiben Sie uns!</p>
-  <p>E-Mail: kontakt@raht-consulting.com</p>
+<button class="kontaktanfrage-button" onclick="openModal()">Kontaktanfrage</button>
+<button class="kontaktanfrage-button" onclick="openModal()">Kontaktanfrage</button>
+
   <p>Telefon: +49 157 73421824</p>
-</section>
 
   <footer>
     <p>&copy; 2025 Raht Consulting. Alle Rechte vorbehalten.</p>
   </footer>
-  <button id="scrollTopBtn" onclick="scrollToSection('leistungen')">↑</button>
+  <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
 <script>
   // Glattes Scrollen beim Klick auf Navigation
   document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
