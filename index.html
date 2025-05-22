@@ -214,9 +214,18 @@
 
 </style>    
 </head>
-<body>
-  
-    
+<header>
+  <div class="logo">Raht Consulting</div>
+  <nav>
+    <a href="#leistungen">Leistungen</a>
+    <a href="#projekte">Projekte</a>
+    <a href="#unternehmen">Unternehmen</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+</header>
+<div style="text-align: center; margin-top: 80px;">
+  <button class="kontaktanfrage-button" onclick="openModal()">Kontaktanfrage</button>
+</div>
     <button class="kontaktanfrage-button" onclick="openModal()">Kontaktanfrage</button>
 
   <div class="hero" style="background: url('images/logosquare1.png') center center no-repeat; background-size: 35%; background-attachment: fixed; height: 90vh; position: relative;">
@@ -302,16 +311,15 @@
 
 </section>
 
-  <section style="background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;" id="kontakt">
-    <div style="display: flex; align-items: center; gap: 20px;">
-  <h2 class="section-title" style="text-transform: uppercase; margin: 0; white-space: nowrap;">Kontakt</h2>
-  <div style="flex: 1; height: 1px; background-color: #ccc;"></div>
-</div>
-    <p>Sie haben Fragen oder ein konkretes Projektvorhaben? Schreiben Sie uns!</p>
-    <button class="kontaktanfrage-button" onclick="openModal()">Kontaktanfrage</button>
-
-    <p>Telefon: +49 157 73421824</p>
-  </section>
+<section id="kontakt">
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <h2 class="section-title" style="text-transform: uppercase; margin: 0; white-space: nowrap;">Kontakt</h2>
+    <div style="flex: 1; height: 1px; background-color: #ccc;"></div>
+  </div>
+  <p>Sie haben Fragen oder ein konkretes Projektvorhaben? Schreiben Sie uns!</p>
+  <p>E-Mail: kontakt@raht-consulting.com</p>
+  <p>Telefon: +49 157 73421824</p>
+</section>
 
   <footer>
     <p>&copy; 2025 Raht Consulting. Alle Rechte vorbehalten.</p>
@@ -357,33 +365,31 @@
   function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-</script>
   
 
 <div class="modal-overlay" id="kontaktModal" onclick="closeModal(event)">
   <div class="modal" onclick="event.stopPropagation()">
     <h2>Kontaktanfrage</h2>
-    <form method="POST" action="mailto:1scharnofski@gmail.com" enctype="text/plain">
+    <form method="POST" action="mailto:1scharnofski@gmail.com" enctype="multipart/form-data">
       <input type="text" name="Betreff" placeholder="Betreff" required />
       <input type="text" name="Name" placeholder="Ihr Name" required />
-      <input type="tel" name="Telefon" placeholder="Telefon" required />
       <input type="email" name="Email" placeholder="E-Mail Adresse" required />
+      <input type="tel" name="Telefon" placeholder="Telefon" required />
       <textarea name="Anfrage" placeholder="Ihre Anfrage" required></textarea>
+      <input type="file" name="Datei" />
       <button type="submit" class="submit-button">Absenden</button>
     </form>
   </div>
 </div>
-
 <script>
-function openModal() {
-  document.getElementById('kontaktModal').style.display = 'flex';
-}
-function closeModal(event) {
-  const modal = document.getElementById('kontaktModal');
-  if (event.target === modal) {
-    modal.style.display = 'none';
+  function openModal() {
+    document.getElementById('kontaktModal').style.display = 'flex';
   }
-}
+  function closeModal(event) {
+    const modal = document.getElementById('kontaktModal');
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  }
 </script>
-
 </html>
