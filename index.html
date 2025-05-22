@@ -109,16 +109,13 @@
   transform: scale(1.2);
 }
       
-      $1
-  filter: grayscale(100%);
-}
+      
       .full-width {
       width: 100% !important;
       margin-left: 0;
       margin-right: 0;
     }
-    .section-title {
-          }
+    
     #leistungen h3 {
   color: #2d6a2d;
   text-transform: uppercase;
@@ -142,6 +139,18 @@
   border-radius: 8px;
   display: block;
 }
+  @keyframes pulseArrow {
+    0% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.2); }
+    100% { transform: translateX(-50%) scale(1); }
+  }
+  .hero button {
+    animation: pulseArrow 1s infinite;
+  }
+  .hero button:hover {
+    animation: none;
+    transform: translateX(-50%) scale(1.2);
+  }
 </style>
 </head>
 <body>
@@ -155,24 +164,6 @@
       <a href="#kontakt">Kontakt</a>
     </nav>
   </header>
-
-  <div class="hero" style="background: url('images/logosquare1.png') center center no-repeat; background-size: 35%; background-attachment: fixed; height: 90vh; position: relative;">
-  <button onclick="scrollToSection('leistungen')" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #333; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">↓</button>
-  <style>
-    @keyframes pulseArrow {
-      0% { transform: translateX(-50%) scale(1); }
-      50% { transform: translateX(-50%) scale(1.2); }
-      100% { transform: translateX(-50%) scale(1); }
-    }
-    .hero button {
-      animation: pulseArrow 1s infinite;
-    }
-    .hero button:hover {
-      animation: none;
-      transform: translateX(-50%) scale(1.2);
-    }
-  </style>
-</div>
 
   <section id="leistungen">
   <div style="display: flex; align-items: center; gap: 20px;">
@@ -225,31 +216,33 @@
   </div>
 
 </section>
-<section style="background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;" id="projekte">
-    <div style="display: flex; align-items: center; gap: 20px;">
-  <h2 class="section-title" style="text-transform: uppercase; margin: 0; white-space: nowrap;">Aktuelle Projekte</h2>
-  <div style="flex: 1; height: 1px; background-color: #ccc;"></div>
-</div>
-    <div class="grid">
-      <div>
-        <img src="images/craneman1.png" alt="Projekt 1" class="image-shadow" />
-        <p><strong>Penthouse Berlin</strong> – 120 moderne Wohneinheiten mit Fokus auf energieeffizientes Bauen, hohe Ausführungsqualität und eine nachhaltige Integration in die urbane Umgebung. Das Projekt setzt neue Maßstäbe im Bereich ressourcenschonendes Bauen und steht beispielhaft für modernes, zukunftsorientiertes Stadtwohnen.</p>
-      </div>
-      <div>
-        <img src="images/crane1.png" alt="Projekt 2" class="image-shadow" />
-        <p><strong>Bürokomplex Hamburg</strong> – Ein intelligenter Neubau mit modernster Gebäudeautomation, optimierter Flächennutzung und zukunftsweisendem Energiekonzept. Hochwertige Materialien und funktionales Design sorgen für ein professionelles Arbeitsumfeld. Das Projekt erfüllt höchste Nachhaltigkeitsstandards und bietet maximale Flexibilität für moderne Unternehmen.</p>
-      </div>
-    </div>
-  </section>
 
-  <section style="background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;" id="unternehmen">
-  
-    <div style="display: flex; align-items: center; gap: 20px;">
-  <h2 class="section-title" style="text-transform: uppercase; margin: 0; white-space: nowrap;">Über uns</h2>
-  <div style="flex: 1; height: 1px; background-color: #ccc;"></div>
-</div>
-    <p>Wir begleiten unsere Kunden von der ersten Idee bis zur Realisierung mit einem klaren Fokus auf Qualität, Effizienz und Innovation. Mit unserem Netzwerk an Fachplanern, Architekten und Technikpartnern setzen wir Projekte ganzheitlich um – zielgerichtet, partnerschaftlich und auf höchstem fachlichen Niveau.</p>
-  </section>
+<section id="unternehmen" style="background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <h2 class="section-title" style="text-transform: uppercase; margin: 0; white-space: nowrap;">Über uns</h2>
+    <div style="flex: 1; height: 1px; background-color: #ccc;"></div>
+  </div>
+  <h3>Ihr Projekt in guten Händen</h3>
+  <p>Mit Fachkompetenz, Weitblick und einem klar strukturierten Ablauf begleite ich Ihr Bauvorhaben zuverlässig durch jede Phase – für ein Ergebnis, das überzeugt.</p>
+  <p>Mein Name ist Marvin Raht, und ich bin Ihr Ansprechpartner für kompetente und zuverlässige Planung und Beratung im Bauwesen. Mit Leidenschaft für durchdachte Architektur, technische Präzision und wirtschaftliche Lösungen begleite ich Bauvorhaben vom ersten Konzept bis zur erfolgreichen Umsetzung. Als studierter Bauingenieur mit über einem Jahrzehnt Praxiserfahrung in der Planung und Projektsteuerung habe ich mich auf die umfassende Betreuung in den Leistungsphasen 1 bis 9 nach HOAI spezialisiert. Dabei lege ich besonderen Wert auf eine transparente Kommunikation, realistische Kostenplanung und individuelle Lösungen, die sowohl funktional als auch gestalterisch überzeugen.</p>
+  <p>Was mich auszeichnet, ist mein Blick fürs Ganze – kombiniert mit dem nötigen Detailbewusstsein. Ich verstehe mich als Schnittstelle zwischen Bauherrschaft, Fachplanern und Behörden und sorge dafür, dass Ihr Projekt nicht nur technisch, sondern auch menschlich gut begleitet wird. Ich arbeite strukturiert, transparent und mit einem hohen Qualitätsanspruch – und ich weiß auch, wann es besser ist, Experten ins Boot zu holen. Für spezielle Fragestellungen greife ich auf ein zuverlässiges Netzwerk an erfahrenen Partnern und Fachplanern zurück, mit denen ich projektbezogen zusammenarbeite. So stelle ich sicher, dass Sie in jeder Situation die bestmögliche Lösung erhalten.</p>
+  <p><strong>Was Sie von mir erwarten können:</strong><br>
+  •  Klare Beratung und strukturierte Abläufe <br>
+  •  Termintreue, Kostenbewusstsein und Qualität <br>
+  •  Persönliches Engagement in jeder Projektphase</p>
+  <p>Ich freue mich darauf, auch Ihr Vorhaben kennenzulernen und gemeinsam mit Ihnen erfolgreich umzusetzen.</p>
+  <p>Neben der planerischen Beratung bringe ich als ausgebildeter Betonbauer auch umfassende praktische Erfahrung auf der Baustelle mit. Ich übernehme handwerkliche Arbeiten im Bereich Beton- und Stahlbetonbau und unterstütze Projekte dort, wo präzise und fachgerechte Ausführung gefragt ist.</p>
+  <p><strong>Meine handwerklichen Leistungen im Überblick:</strong><br>
+  •  Herstellung von Fundamenten, Bodenplatten und Decken <br>
+  •  Schalungsarbeiten (konventionell oder mit Systemschalung) <br>
+  •  Bewehrung nach statischen Vorgaben <br>
+  •  Betonagearbeiten im Hoch- und Tiefbau <br>
+  •  Kleinere Rohbauarbeiten und Reparaturen <br>
+  •  Ausführung von Estrich- und Sichtbetonflächen nach Wunsch <br>
+  •  Unterstützung bei Sanierungs- oder Umbauprojekten</p>
+  <p>Durch meine doppelte Kompetenz – sowohl in der Planung als auch in der praktischen Umsetzung – biete ich Ihnen ein Plus an Sicherheit, Qualität und Effizienz. Ich weiß, worauf es auf der Baustelle ankommt, und arbeite sauber, zuverlässig und termingerecht. Ob im privaten, gewerblichen oder öffentlichen Bereich - kommt Zeit, kommt Raht.</p>
+
+</section>
 
   <section style="background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;" id="kontakt">
     <div style="display: flex; align-items: center; gap: 20px;">
